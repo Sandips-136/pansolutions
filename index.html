@@ -1,463 +1,826 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PAN Solutions | Cyber Security &bull; Data &bull; Integration &bull; AI</title>
-  <meta name="description" content="PAN Solutions helps organisations modernise IT, assess and strengthen cyber posture, integrate systems at scale, and unlock value from data with practical AI." />
-  <link rel="canonical" href="https://www.pansolutions.co.uk/" />
+  <title>PAN Solutions | Cyber Security · Data · Integration · AI</title>
+  <meta name="description" content="PAN Solutions helps organisations modernise IT, strengthen cyber posture, integrate systems at scale, and unlock value from data with practical AI." />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="PAN Solutions | Cyber Security, Data, Integration & AI" />
-  <meta property="og:description" content="PAN Solutions helps organisations modernise IT, assess and strengthen cyber posture, integrate systems at scale, and unlock value from data with practical AI." />
+  <meta property="og:title" content="PAN Solutions | Cyber Security · Data · Integration · AI" />
+  <meta property="og:description" content="Specialist IT services partner — cyber security assessments, data platforms, enterprise integration, and applied AI." />
   <meta property="og:url" content="https://www.pansolutions.co.uk/" />
-  <meta property="og:image" content="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=75" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="PAN Solutions | Cyber Security, Data, Integration & AI" />
-  <meta name="twitter:description" content="Secure, connected platforms built for the age of AI." />
-  <meta name="twitter:image" content="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=75" />
+  <meta name="twitter:title" content="PAN Solutions | Cyber Security · Data · Integration · AI" />
+  <meta name="twitter:description" content="Specialist IT services partner — cyber security assessments, data platforms, enterprise integration, and applied AI." />
 
   <!-- Favicon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='20' width='100' height='100' fill='%2300d4aa'/><text x='50' y='72' font-size='60' font-family='Arial' font-weight='bold' text-anchor='middle' fill='white'>P</text></svg>" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text x='4' y='26' font-size='28' font-weight='bold' fill='%230F6FDE'>P</text></svg>" />
 
-  <!-- JSON-LD -->
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Theme init (prevents flash) -->
+  <script>
+    (function() {
+      var t = localStorage.getItem('pan-theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "PAN Solutions",
     "url": "https://www.pansolutions.co.uk",
+    "description": "Specialist IT services partner — cyber security, data platforms, enterprise integration, and applied AI.",
     "email": "sales@pansolutions.co.uk",
     "telephone": "+447536783312",
-    "description": "Specialist IT services partner: Cyber Security, Data Platforms, Enterprise Integration, and Applied AI.",
     "areaServed": "GB",
-    "sameAs": []
+    "serviceType": ["Cyber Security", "Data Engineering", "System Integration", "Artificial Intelligence"]
   }
-  </script>
-
-  <!-- Fonts (preloaded) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css" />
-
-  <script>
-    (function(){
-      var t = localStorage.getItem('pan-theme');
-      if(t) document.documentElement.setAttribute('data-theme', t);
-    })();
   </script>
 </head>
 <body>
 
-  <!-- Skip to content (a11y) -->
+  <!-- Skip Link -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- PAGE LOADER -->
-  <div class="page-loader" id="pageLoader" aria-hidden="true">
-    <div class="loader-content">
-      <span class="loader-logo-wrap"><img src="https://www.pansolutions.co.uk/images/pansolutions.svg" alt="" class="loader-logo" /></span>
-      <div class="loader-percent" id="loaderPercent">0%</div>
-      <div class="loader-bar"><div class="loader-bar-inner" id="loaderBarInner"></div></div>
-    </div>
-  </div>
-
-  <!-- SCROLL PROGRESS -->
-  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
-
-  <!-- CUSTOM CURSOR -->
-  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
-  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
-
-  <!-- SECTION DOTS NAV -->
-  <nav class="section-dots" id="sectionDots" aria-label="Section navigation">
-    <button data-target="hero" class="dot active" aria-label="Hero"><span></span></button>
-    <button data-target="services" class="dot" aria-label="Services"><span></span></button>
-    <button data-target="approach" class="dot" aria-label="Approach"><span></span></button>
-    <button data-target="work" class="dot" aria-label="Work"><span></span></button>
-    <button data-target="about" class="dot" aria-label="About"><span></span></button>
-    <button data-target="contact" class="dot" aria-label="Contact"><span></span></button>
-  </nav>
-
-  <!-- NAVIGATION -->
-  <nav class="navbar" id="navbar" role="banner">
-    <div class="nav-container">
-      <a href="#" class="nav-logo" aria-label="PAN Solutions Home">
-        <img src="https://www.pansolutions.co.uk/images/pansolutions.svg" alt="PAN Solutions" class="nav-logo-img" />
+  <!-- ====== NAVIGATION ====== -->
+  <header class="navbar" role="banner">
+    <div class="container">
+      <a href="#" class="nav-logo" aria-label="PAN Solutions home">
+        <img src="https://www.pansolutions.co.uk/images/pansolutions.svg" alt="PAN Solutions" width="120" height="36" />
       </a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#approach">Approach</a></li>
-        <li><a href="#work">Work</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+
+      <nav class="nav-links" role="navigation" aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#approach">Approach</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <!-- Mobile-only CTA -->
+        <a href="#contact" class="btn btn--primary btn--full nav-mobile-cta">Let's Talk</a>
+      </nav>
+
       <div class="nav-actions">
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-          <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-          <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+          <!-- Sun icon -->
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <!-- Moon icon -->
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         </button>
-        <a href="#contact" class="nav-cta magnetic-btn">Book a Call</a>
+        <a href="#contact" class="btn btn--primary nav-cta">Let's Talk
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
       </div>
-      <button class="nav-hamburger" id="navHamburger" aria-label="Toggle navigation" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
     </div>
-  </nav>
+  </header>
 
   <main id="main-content" role="main">
 
-  <!-- HERO -->
-  <header class="hero snap-section" id="hero">
-    <canvas class="particle-canvas" id="particleCanvas" aria-hidden="true"></canvas>
-    <div class="hero-aurora" aria-hidden="true">
-      <div class="aurora-blob aurora-blob-1"></div>
-      <div class="aurora-blob aurora-blob-2"></div>
-      <div class="aurora-blob aurora-blob-3"></div>
-    </div>
-    <div class="container hero-content">
-      <p class="hero-tagline reveal">Trusted delivery across Cyber Security, Data, Integration &amp; AI</p>
-      <h1 class="hero-title reveal">
-        <span class="highlight-text">Secure, connected platforms</span>&nbsp;&mdash;<br />built for the age of
-        <span class="typing-wrapper"><span class="typing-text" id="typingText"></span><span class="typing-cursor">|</span></span>
-      </h1>
-      <p class="hero-description reveal">
-        PAN Solutions helps organisations <span class="highlight-text">modernise IT</span>, assess and strengthen cyber posture, integrate systems at scale, and <span class="highlight-text">unlock value from data</span> with practical AI.
-      </p>
-      <div class="hero-buttons reveal">
-        <a href="#contact" class="btn btn-primary magnetic-btn">Request an Assessment</a>
-        <a href="#services" class="btn btn-outline">Explore Services</a>
-      </div>
-    </div>
-    <div class="hero-scroll-indicator" aria-hidden="true"><span></span></div>
-  </header>
-
-  <!-- CAPABILITIES -->
-  <section class="section capabilities snap-section" id="services">
-    <div class="container">
-      <p class="section-label reveal">What we do</p>
-      <h2 class="section-title reveal">Our <span class="highlight-text">Capabilities</span></h2>
-      <p class="section-subtitle reveal">A full-stack services portfolio &mdash; from security and modern platforms to data products and AI acceleration.</p>
-      <div class="capabilities-grid">
-        <div class="capability-card glass-card reveal tilt-card" data-index="0" aria-expanded="false">
-          <div class="capability-card-header"><div class="capability-icon svg-draw"><svg viewBox="0 0 48 48" fill="none"><path d="M24 4L6 12v12c0 11.1 7.68 21.48 18 24 10.32-2.52 18-12.9 18-24V12L24 4z" stroke="currentColor" stroke-width="2.5" fill="none"/><path d="M18 24l4 4 8-8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="capability-text"><h3>Cyber Security</h3><p class="capability-tagline">Assessment &amp; Assurance</p></div><div class="capability-toggle"><svg viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-          <div class="capability-card-body"><div class="capability-card-inner"><div class="capability-card-details"><p>Comprehensive security posture evaluation with actionable remediation strategies tailored to your risk profile.</p><ul><li>Risk-based security assessments</li><li>Controls mapping &amp; gap analysis</li><li>Threat modelling &amp; reviews</li><li>Remediation roadmap</li></ul></div><div class="capability-card-image"><img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=75" alt="Cyber Security" loading="lazy" /></div></div></div>
-        </div>
-        <div class="capability-card glass-card reveal tilt-card" data-index="1" aria-expanded="false">
-          <div class="capability-card-header"><div class="capability-icon svg-draw"><svg viewBox="0 0 48 48" fill="none"><ellipse cx="24" cy="12" rx="16" ry="6" stroke="currentColor" stroke-width="2.5" fill="none"/><path d="M8 12v12c0 3.31 7.16 6 16 6s16-2.69 16-6V12" stroke="currentColor" stroke-width="2.5" fill="none"/><path d="M8 24c0 3.31 7.16 6 16 6s16-2.69 16-6" stroke="currentColor" stroke-width="2.5" fill="none"/></svg></div><div class="capability-text"><h3>Data</h3><p class="capability-tagline">Platforms &amp; Products</p></div><div class="capability-toggle"><svg viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-          <div class="capability-card-body"><div class="capability-card-inner"><div class="capability-card-details"><p>Governed, scalable data platforms that turn raw information into trusted analytics and business intelligence.</p><ul><li>Data architecture &amp; governance</li><li>Lakehouse / warehouse build</li><li>Data quality &amp; lineage</li><li>BI &amp; analytics delivery</li></ul></div><div class="capability-card-image"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=75" alt="Data Engineering" loading="lazy" /></div></div></div>
-        </div>
-        <div class="capability-card glass-card reveal tilt-card" data-index="2" aria-expanded="false">
-          <div class="capability-card-header"><div class="capability-icon svg-draw"><svg viewBox="0 0 48 48" fill="none"><circle cx="12" cy="24" r="6" stroke="currentColor" stroke-width="2.5" fill="none"/><circle cx="36" cy="12" r="6" stroke="currentColor" stroke-width="2.5" fill="none"/><circle cx="36" cy="36" r="6" stroke="currentColor" stroke-width="2.5" fill="none"/><path d="M18 22l12-8M18 26l12 8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></div><div class="capability-text"><h3>Integration</h3><p class="capability-tagline">APIs &amp; Event-Driven</p></div><div class="capability-toggle"><svg viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-          <div class="capability-card-body"><div class="capability-card-inner"><div class="capability-card-details"><p>API-first integration with eventing, governance, versioning strategy, and reusable enterprise patterns.</p><ul><li>API management &amp; eventing</li><li>iPaaS / ESB strategy &amp; build</li><li>Secure connectivity</li><li>Observability &amp; SLAs</li></ul></div><div class="capability-card-image"><img src="https://images.unsplash.com/photo-1558346547-4439467bd1d5?auto=format&fit=crop&w=600&q=75" alt="Integration" loading="lazy" /></div></div></div>
-        </div>
-        <div class="capability-card glass-card reveal tilt-card" data-index="3" aria-expanded="false">
-          <div class="capability-card-header"><div class="capability-icon svg-draw"><svg viewBox="0 0 48 48" fill="none"><rect x="8" y="8" width="32" height="32" rx="6" stroke="currentColor" stroke-width="2.5" fill="none"/><circle cx="18" cy="20" r="3" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="30" cy="20" r="3" stroke="currentColor" stroke-width="2" fill="none"/><path d="M18 32c0-3.31 2.69-6 6-6s6 2.69 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg></div><div class="capability-text"><h3>AI</h3><p class="capability-tagline">Use Cases to Production</p></div><div class="capability-toggle"><svg viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-          <div class="capability-card-body"><div class="capability-card-inner"><div class="capability-card-details"><p>Responsible, measurable AI outcomes &mdash; from copilots and automation to RAG-powered search and content AI.</p><ul><li>AI copilots &amp; automation</li><li>RAG, search &amp; content AI</li><li>Responsible, measurable outcomes</li><li>Use-case rollout playbook</li></ul></div><div class="capability-card-image"><img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=600&q=75" alt="AI" loading="lazy" /></div></div></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- IT SERVICES -->
-  <section class="section it-services snap-section">
-    <div class="container">
-      <p class="section-label reveal">IT Services</p>
-      <h2 class="section-title reveal">Modernisation &amp; Delivery</h2>
-      <div class="it-services-grid">
-        <div class="it-service-item glass-card reveal tilt-card" data-index="0"><span class="it-service-number">01</span><h4>Cloud Adoption &amp; Landing Zones</h4><p>Accelerate your cloud journey with secure, well-architected foundations.</p></div>
-        <div class="it-service-item glass-card reveal tilt-card" data-index="1"><span class="it-service-number">02</span><h4>Operating Model &amp; Governance</h4><p>Design operating models that balance agility with control and compliance.</p></div>
-        <div class="it-service-item glass-card reveal tilt-card" data-index="2"><span class="it-service-number">03</span><h4>Reliability, Monitoring &amp; FinOps</h4><p>Ensure uptime, visibility, and cost efficiency across your cloud estate.</p></div>
-        <div class="it-service-item glass-card reveal tilt-card" data-index="3"><span class="it-service-number">04</span><h4>DevSecOps Enablement</h4><p>Embed security into every stage of the software delivery lifecycle.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- IMAGE SHOWCASE -->
-  <section class="image-showcase snap-section">
-    <div class="container">
-      <div class="showcase-grid">
-        <div class="showcase-item reveal" data-index="0" data-parallax="0.04"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=75" alt="Data engineering" loading="lazy" /><div class="showcase-overlay"><span class="showcase-label">Data Engineering</span></div></div>
-        <div class="showcase-item reveal" data-index="1" data-parallax="0.06"><img src="https://images.unsplash.com/photo-1558346547-4439467bd1d5?auto=format&fit=crop&w=800&q=75" alt="Integration and networking" loading="lazy" /><div class="showcase-overlay"><span class="showcase-label">Integration &amp; Networking</span></div></div>
-        <div class="showcase-item reveal" data-index="2" data-parallax="0.04"><img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=75" alt="AI and automation" loading="lazy" /><div class="showcase-overlay"><span class="showcase-label">AI &amp; Automation</span></div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- APPROACH -->
-  <section class="section approach snap-section" id="approach">
-    <div class="container">
-      <p class="section-label reveal">How we deliver</p>
-      <h2 class="section-title reveal">Our <span class="highlight-text">Approach</span></h2>
-      <p class="section-subtitle reveal">A pragmatic approach that balances speed, security and long-term maintainability.</p>
-      <div class="timeline">
-        <div class="timeline-item reveal" data-index="0"><div class="timeline-number">1</div><div class="timeline-content"><h3>Discover</h3><p>Understand objectives, current state, risks, and constraints.</p></div></div>
-        <div class="timeline-item reveal" data-index="1"><div class="timeline-number">2</div><div class="timeline-content"><h3>Design</h3><p>Architecture, controls, operating model, and delivery blueprint.</p></div></div>
-        <div class="timeline-item reveal" data-index="2"><div class="timeline-number">3</div><div class="timeline-content"><h3>Build</h3><p>Implement with DevSecOps, testing, and measurable outcomes.</p></div></div>
-        <div class="timeline-item reveal" data-index="3"><div class="timeline-number">4</div><div class="timeline-content"><h3>Run</h3><p>Operationalise: monitoring, incident response, improvements.</p></div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- STATS -->
-  <section class="section stats-section snap-section">
-    <div class="container">
-      <div class="stats-grid">
-        <div class="stat-card glass-card reveal tilt-card" data-index="0"><div class="stat-icon svg-draw"><svg viewBox="0 0 48 48" fill="none"><path d="M24 4L6 12v12c0 11.1 7.68 21.48 18 24 10.32-2.52 18-12.9 18-24V12L24 4z" stroke="currentColor" stroke-width="2.5" fill="none"/></svg></div><div class="stat-number" data-target="50">0</div><div class="stat-suffix">+</div><p class="stat-label">Security Assessments</p></div>
-        <div class="stat-card glass-card reveal tilt-card" data-index="1"><div class="stat-icon svg-draw"><svg viewBox="0 0 48 48" fill="none"><circle cx="12" cy="24" r="6" stroke="currentColor" stroke-width="2.5" fill="none"/><circle cx="36" cy="12" r="6" stroke="currentColor" stroke-width="2.5" fill="none"/><circle cx="36" cy="36" r="6" stroke="currentColor" stroke-width="2.5" fill="none"/><path d="M18 22l12-8M18 26l12 8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></div><div class="stat-number" data-target="100">0</div><div class="stat-suffix">+</div><p class="stat-label">Integrations Delivered</p></div>
-        <div class="stat-card glass-card reveal tilt-card" data-index="2"><div class="stat-icon svg-draw"><svg viewBox="0 0 48 48" fill="none"><rect x="8" y="8" width="32" height="32" rx="6" stroke="currentColor" stroke-width="2.5" fill="none"/><circle cx="18" cy="20" r="3" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="30" cy="20" r="3" stroke="currentColor" stroke-width="2" fill="none"/><path d="M18 32c0-3.31 2.69-6 6-6s6 2.69 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg></div><div class="stat-number" data-target="30">0</div><div class="stat-suffix">+</div><p class="stat-label">AI Use Cases</p></div>
-        <div class="stat-card glass-card reveal tilt-card" data-index="3"><div class="stat-icon svg-draw"><svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2.5" fill="none"/><path d="M24 14v10l7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="stat-number" data-target="10">0</div><div class="stat-suffix">+</div><p class="stat-label">Years Experience</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CLIENT LOGOS -->
-  <section class="section logos-section snap-section">
-    <div class="container"><p class="section-label reveal" style="text-align:center">Trusted by</p></div>
-    <div class="logos-ticker" aria-label="Client logos">
-      <div class="logos-track">
-        <div class="logo-item">Microsoft Azure</div><div class="logo-item">AWS</div><div class="logo-item">Google Cloud</div><div class="logo-item">Deloitte</div><div class="logo-item">Accenture</div><div class="logo-item">HSBC</div><div class="logo-item">Barclays</div><div class="logo-item">NHS Digital</div>
-        <div class="logo-item">Microsoft Azure</div><div class="logo-item">AWS</div><div class="logo-item">Google Cloud</div><div class="logo-item">Deloitte</div><div class="logo-item">Accenture</div><div class="logo-item">HSBC</div><div class="logo-item">Barclays</div><div class="logo-item">NHS Digital</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- OUTCOMES -->
-  <section class="section outcomes snap-section" id="work">
-    <div class="container">
-      <p class="section-label reveal">Example outcomes</p>
-      <h2 class="section-title reveal">What We <span class="highlight-text">Deliver</span></h2>
-      <p class="section-subtitle reveal">Illustrative engagements &mdash; tailored to your environment and risk profile.</p>
-      <div class="outcomes-grid">
-        <div class="outcome-card glass-card reveal tilt-card" data-index="0"><div class="outcome-card-image"><img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=75" alt="Cyber Security Assessment" loading="lazy" /><div class="outcome-card-accent"></div></div><div class="outcome-card-content"><h3>Cyber Security Assessment</h3><p>Control review, identity &amp; access evaluation, cloud posture checks, and a prioritised remediation plan.</p><ul><li>Risk register + heatmap</li><li>Quick wins (0&ndash;30 days)</li><li>Roadmap (30&ndash;180 days)</li></ul></div></div>
-        <div class="outcome-card glass-card reveal tilt-card" data-index="1"><div class="outcome-card-image"><img src="https://images.unsplash.com/photo-1558346547-4439467bd1d5?auto=format&fit=crop&w=600&q=75" alt="Integration Platform" loading="lazy" /><div class="outcome-card-accent"></div></div><div class="outcome-card-content"><h3>Integration Platform</h3><p>API-first integration with eventing, governance, versioning strategy, and reusable patterns.</p><ul><li>API standards &amp; lifecycle</li><li>Observability &amp; SLAs</li><li>Secure connectivity</li></ul></div></div>
-        <div class="outcome-card glass-card reveal tilt-card" data-index="2"><div class="outcome-card-image"><img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=600&q=75" alt="Data + AI Acceleration" loading="lazy" /><div class="outcome-card-accent"></div></div><div class="outcome-card-content"><h3>Data + AI Acceleration</h3><p>Governed data products powering analytics and GenAI copilots (RAG/search), with measurable ROI.</p><ul><li>Data governance &amp; lineage</li><li>Secure AI patterns</li><li>Use-case rollout playbook</li></ul></div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS -->
-  <section class="section testimonials-section snap-section">
-    <div class="container">
-      <p class="section-label reveal" style="text-align:center">What clients say</p>
-      <h2 class="section-title reveal" style="text-align:center">Client <span class="highlight-text">Testimonials</span></h2>
-      <div class="testimonial-carousel reveal">
-        <div class="testimonial-slides" id="testimonialSlides">
-          <div class="testimonial-slide active">
-            <blockquote>&ldquo;PAN Solutions transformed our security posture with a clear, actionable roadmap. Their team was pragmatic, thorough, and delivered ahead of schedule.&rdquo;</blockquote>
-            <div class="testimonial-author"><div class="testimonial-avatar">JR</div><div><strong>James Richardson</strong><span>CTO, FinTech Startup</span></div></div>
-          </div>
-          <div class="testimonial-slide">
-            <blockquote>&ldquo;The integration platform they built unified our 12 legacy systems with a modern API-first approach. Operational costs dropped 40% in six months.&rdquo;</blockquote>
-            <div class="testimonial-author"><div class="testimonial-avatar">SP</div><div><strong>Sarah Patel</strong><span>VP Engineering, Retail Group</span></div></div>
-          </div>
-          <div class="testimonial-slide">
-            <blockquote>&ldquo;Their data engineering team built a governed lakehouse that powers our BI dashboards and AI copilots. Measurable ROI from day one.&rdquo;</blockquote>
-            <div class="testimonial-author"><div class="testimonial-avatar">MK</div><div><strong>Michael Kowalski</strong><span>Head of Data, Insurance Co</span></div></div>
+    <!-- ====== HERO ====== -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <p class="hero-label reveal">Cyber Security · Data · Integration · AI</p>
+          <h1 class="hero-title reveal" data-index="1">Secure, connected platforms built for the age of AI</h1>
+          <p class="hero-description reveal" data-index="2">We help organisations modernise IT, strengthen cyber posture, integrate systems at scale, and unlock value from data with practical AI.</p>
+          <div class="hero-buttons reveal" data-index="3">
+            <a href="#contact" class="btn btn--primary">Request an Assessment
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+            <a href="#services" class="btn btn--outline">Explore Services</a>
           </div>
         </div>
-        <div class="testimonial-controls">
-          <button class="testimonial-prev" id="testPrev" aria-label="Previous testimonial"><svg viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <div class="testimonial-dots" id="testDots"><button class="active" aria-label="Slide 1"></button><button aria-label="Slide 2"></button><button aria-label="Slide 3"></button></div>
-          <button class="testimonial-next" id="testNext" aria-label="Next testimonial"><svg viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+
+        <div class="hero-illustration reveal" data-index="2">
+          <svg viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Connection lines -->
+            <line x1="210" y1="210" x2="210" y2="60" stroke="currentColor" stroke-width="1.5" opacity="0.2"/>
+            <line x1="210" y1="210" x2="360" y2="210" stroke="currentColor" stroke-width="1.5" opacity="0.2"/>
+            <line x1="210" y1="210" x2="210" y2="360" stroke="currentColor" stroke-width="1.5" opacity="0.2"/>
+            <line x1="210" y1="210" x2="60" y2="210" stroke="currentColor" stroke-width="1.5" opacity="0.2"/>
+
+            <!-- Diagonal connection lines -->
+            <line x1="210" y1="60" x2="360" y2="210" stroke="currentColor" stroke-width="1" opacity="0.08"/>
+            <line x1="360" y1="210" x2="210" y2="360" stroke="currentColor" stroke-width="1" opacity="0.08"/>
+            <line x1="210" y1="360" x2="60" y2="210" stroke="currentColor" stroke-width="1" opacity="0.08"/>
+            <line x1="60" y1="210" x2="210" y2="60" stroke="currentColor" stroke-width="1" opacity="0.08"/>
+
+            <!-- Outer decorative ring -->
+            <circle cx="210" cy="210" r="170" stroke="currentColor" stroke-width="0.5" opacity="0.06" stroke-dasharray="8 8"/>
+            <circle cx="210" cy="210" r="120" stroke="currentColor" stroke-width="0.5" opacity="0.04"/>
+
+            <!-- Central hexagon node -->
+            <g transform="translate(210,210)">
+              <polygon points="0,-28 24,-14 24,14 0,28 -24,14 -24,-14" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.3"/>
+              <polygon points="0,-16 14,-8 14,8 0,16 -14,8 -14,-8" stroke="currentColor" stroke-width="1" fill="currentColor" opacity="0.08"/>
+            </g>
+
+            <!-- Top: Shield (Cyber Security) -->
+            <g class="node-pulse" transform="translate(210,60)">
+              <circle cx="0" cy="0" r="32" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.15"/>
+              <path d="M0-16 L12-10 L12 4 C12 12 0 18 0 18 C0 18 -12 12 -12 4 L-12-10 Z" stroke="currentColor" stroke-width="1.8" fill="none"/>
+              <polyline points="-4,2 -1,6 6,-2" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+
+            <!-- Right: Database (Data) -->
+            <g class="node-pulse node-pulse--delay-1" transform="translate(360,210)">
+              <circle cx="0" cy="0" r="32" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.15"/>
+              <ellipse cx="0" cy="-8" rx="12" ry="5" stroke="currentColor" stroke-width="1.8" fill="none"/>
+              <path d="M-12-8 L-12 0 C-12 3 -6 5 0 5 C6 5 12 3 12 0 L12-8" stroke="currentColor" stroke-width="1.8" fill="none"/>
+              <path d="M-12 0 L-12 8 C-12 11 -6 13 0 13 C6 13 12 11 12 8 L12 0" stroke="currentColor" stroke-width="1.8" fill="none"/>
+            </g>
+
+            <!-- Bottom: Brain (AI) -->
+            <g class="node-pulse node-pulse--delay-2" transform="translate(210,360)">
+              <circle cx="0" cy="0" r="32" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.15"/>
+              <path d="M-4-12 C-10-12 -14-6 -12-1 C-16 2 -12 8 -6 8 L-2 8" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+              <path d="M4-12 C10-12 14-6 12-1 C16 2 12 8 6 8 L2 8" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+              <line x1="0" y1="-6" x2="0" y2="12" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="-6" cy="-3" r="1.5" fill="currentColor" opacity="0.4"/>
+              <circle cx="6" cy="-3" r="1.5" fill="currentColor" opacity="0.4"/>
+              <circle cx="-4" cy="4" r="1.5" fill="currentColor" opacity="0.4"/>
+              <circle cx="4" cy="4" r="1.5" fill="currentColor" opacity="0.4"/>
+            </g>
+
+            <!-- Left: Connected nodes (Integration) -->
+            <g class="node-pulse node-pulse--delay-3" transform="translate(60,210)">
+              <circle cx="0" cy="0" r="32" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.15"/>
+              <circle cx="-6" cy="-8" r="5" stroke="currentColor" stroke-width="1.8" fill="none"/>
+              <circle cx="8" cy="-4" r="5" stroke="currentColor" stroke-width="1.8" fill="none"/>
+              <circle cx="0" cy="8" r="5" stroke="currentColor" stroke-width="1.8" fill="none"/>
+              <line x1="-2" y1="-4" x2="4" y2="-4" stroke="currentColor" stroke-width="1.2" opacity="0.5"/>
+              <line x1="-4" y1="-3" x2="-2" y2="4" stroke="currentColor" stroke-width="1.2" opacity="0.5"/>
+              <line x1="6" y1="0" x2="3" y2="4" stroke="currentColor" stroke-width="1.2" opacity="0.5"/>
+            </g>
+
+            <!-- Small decorative dots -->
+            <circle cx="135" cy="135" r="2" fill="currentColor" opacity="0.1"/>
+            <circle cx="285" cy="135" r="2" fill="currentColor" opacity="0.1"/>
+            <circle cx="285" cy="285" r="2" fill="currentColor" opacity="0.1"/>
+            <circle cx="135" cy="285" r="2" fill="currentColor" opacity="0.1"/>
+            <circle cx="135" cy="210" r="1.5" fill="currentColor" opacity="0.06"/>
+            <circle cx="285" cy="210" r="1.5" fill="currentColor" opacity="0.06"/>
+            <circle cx="210" cy="135" r="1.5" fill="currentColor" opacity="0.06"/>
+            <circle cx="210" cy="285" r="1.5" fill="currentColor" opacity="0.06"/>
+          </svg>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ABOUT -->
-  <section class="section about-section snap-section" id="about">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-text">
-          <p class="section-label reveal">Who we are</p>
-          <h2 class="section-title reveal">About <span class="highlight-text">PAN Solutions</span></h2>
-          <p class="about-description reveal">We're a specialist IT services partner helping teams deliver <span class="highlight-text">secure, scalable and compliant</span> technology. Our work spans cyber security assessments, data platforms, enterprise integration, and applied AI.</p>
-          <div class="about-values">
-            <div class="about-value-card glass-card reveal tilt-card" data-index="0"><div class="about-value-icon svg-draw"><svg viewBox="0 0 48 48" fill="none"><path d="M24 4L6 12v12c0 11.1 7.68 21.48 18 24 10.32-2.52 18-12.9 18-24V12L24 4z" stroke="currentColor" stroke-width="2.5" fill="none"/></svg></div><h3>Security-first</h3><p>Controls, privacy, and compliance built in &mdash; not bolted on.</p></div>
-            <div class="about-value-card glass-card reveal tilt-card" data-index="1"><div class="about-value-icon svg-draw"><svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2.5" fill="none"/><path d="M16 24l6 6 10-10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Outcome-led</h3><p>Clear success metrics and practical delivery cadence.</p></div>
+    <!-- ====== CAPABILITIES ====== -->
+    <section id="services" class="section section--elevated">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="section-label">What we do</p>
+          <h2 class="section-title">Our Capabilities</h2>
+          <p class="section-subtitle">Deep expertise across four pillars that keep your organisation secure, connected, and ready for what's next.</p>
+        </div>
+
+        <div class="capabilities-grid">
+          <!-- Cyber Security -->
+          <div class="capability-card reveal" data-index="0">
+            <button class="capability-card-header" aria-expanded="false">
+              <svg class="capability-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M24 4L40 12V22C40 33 33 40 24 44C15 40 8 33 8 22V12L24 4Z"/>
+                <polyline points="18 24 22 28 30 20"/>
+              </svg>
+              <div class="capability-card-text">
+                <h3>Cyber Security</h3>
+                <span>Assessment & Assurance</span>
+              </div>
+              <svg class="capability-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="capability-card-body">
+              <div class="capability-card-inner">
+                <p>Comprehensive security posture evaluation with actionable remediation strategies tailored to your risk profile.</p>
+                <ul class="capability-list">
+                  <li>Risk-based security assessments</li>
+                  <li>Controls mapping & gap analysis</li>
+                  <li>Threat modelling & reviews</li>
+                  <li>Remediation roadmap</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Data -->
+          <div class="capability-card reveal" data-index="1">
+            <button class="capability-card-header" aria-expanded="false">
+              <svg class="capability-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <ellipse cx="24" cy="12" rx="16" ry="6"/>
+                <path d="M8 12V24C8 27.3 15.2 30 24 30C32.8 30 40 27.3 40 24V12"/>
+                <path d="M8 24V36C8 39.3 15.2 42 24 42C32.8 42 40 39.3 40 36V24"/>
+              </svg>
+              <div class="capability-card-text">
+                <h3>Data</h3>
+                <span>Platforms & Products</span>
+              </div>
+              <svg class="capability-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="capability-card-body">
+              <div class="capability-card-inner">
+                <p>Governed, scalable data platforms that turn raw information into trusted analytics and business intelligence.</p>
+                <ul class="capability-list">
+                  <li>Data architecture & governance</li>
+                  <li>Lakehouse / warehouse build</li>
+                  <li>Data quality & lineage</li>
+                  <li>BI & analytics delivery</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Integration -->
+          <div class="capability-card reveal" data-index="2">
+            <button class="capability-card-header" aria-expanded="false">
+              <svg class="capability-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="14" cy="14" r="7"/>
+                <circle cx="34" cy="14" r="7"/>
+                <circle cx="24" cy="34" r="7"/>
+                <line x1="20" y1="16" x2="28" y2="16"/>
+                <line x1="16" y1="20" x2="21" y2="28"/>
+                <line x1="32" y1="20" x2="27" y2="28"/>
+              </svg>
+              <div class="capability-card-text">
+                <h3>Integration</h3>
+                <span>APIs & Event-Driven</span>
+              </div>
+              <svg class="capability-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="capability-card-body">
+              <div class="capability-card-inner">
+                <p>API-first integration with eventing, governance, versioning strategy, and reusable enterprise patterns.</p>
+                <ul class="capability-list">
+                  <li>API management & eventing</li>
+                  <li>iPaaS / ESB strategy & build</li>
+                  <li>Secure connectivity</li>
+                  <li>Observability & SLAs</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- AI -->
+          <div class="capability-card reveal" data-index="3">
+            <button class="capability-card-header" aria-expanded="false">
+              <svg class="capability-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8C8 8 4 16 6 22C2 26 4 34 12 34H16"/>
+                <path d="M32 8C40 8 44 16 42 22C46 26 44 34 36 34H32"/>
+                <line x1="24" y1="10" x2="24" y2="38"/>
+                <circle cx="18" cy="20" r="2.5" fill="currentColor" opacity="0.3"/>
+                <circle cx="30" cy="20" r="2.5" fill="currentColor" opacity="0.3"/>
+                <circle cx="16" cy="28" r="2" fill="currentColor" opacity="0.3"/>
+                <circle cx="32" cy="28" r="2" fill="currentColor" opacity="0.3"/>
+                <circle cx="24" cy="24" r="2" fill="currentColor" opacity="0.3"/>
+              </svg>
+              <div class="capability-card-text">
+                <h3>AI</h3>
+                <span>Use Cases to Production</span>
+              </div>
+              <svg class="capability-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="capability-card-body">
+              <div class="capability-card-inner">
+                <p>Responsible, measurable AI outcomes — from copilots and automation to RAG-powered search and content AI.</p>
+                <ul class="capability-list">
+                  <li>AI copilots & automation</li>
+                  <li>RAG, search & content AI</li>
+                  <li>Responsible, measurable outcomes</li>
+                  <li>Use-case rollout playbook</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="about-image reveal"><img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=75" alt="Team collaboration" loading="lazy" /><div class="about-image-border"></div></div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- TEAM -->
-  <section class="section team-section snap-section">
-    <div class="container">
-      <p class="section-label reveal" style="text-align:center">Leadership</p>
-      <h2 class="section-title reveal" style="text-align:center">Our <span class="highlight-text">Team</span></h2>
-      <div class="team-grid">
-        <div class="team-card glass-card reveal tilt-card" data-index="0">
-          <div class="team-avatar"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=200&q=80" alt="Principal Consultant" loading="lazy" /></div>
-          <h4>Principal Consultant</h4>
-          <p class="team-role">Cyber Security &amp; Strategy</p>
-          <p class="team-bio">15+ years in security assessments, risk management, and cloud security architecture.</p>
-          <a href="#" class="team-social" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <!-- ====== IT SERVICES ====== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="section-label">IT Services</p>
+          <h2 class="section-title">Modernisation & Delivery</h2>
         </div>
-        <div class="team-card glass-card reveal tilt-card" data-index="1">
-          <div class="team-avatar"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=200&q=80" alt="Data Lead" loading="lazy" /></div>
-          <h4>Data Lead</h4>
-          <p class="team-role">Platforms &amp; Engineering</p>
-          <p class="team-bio">Expert in lakehouse architecture, data governance, and BI analytics at enterprise scale.</p>
-          <a href="#" class="team-social" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-        <div class="team-card glass-card reveal tilt-card" data-index="2">
-          <div class="team-avatar"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=200&q=80" alt="Integration Architect" loading="lazy" /></div>
-          <h4>Integration Architect</h4>
-          <p class="team-role">APIs &amp; Eventing</p>
-          <p class="team-bio">Designed API platforms and event-driven architectures for FTSE 100 companies.</p>
-          <a href="#" class="team-social" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-        <div class="team-card glass-card reveal tilt-card" data-index="3">
-          <div class="team-avatar"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=200&q=80" alt="AI Engineer" loading="lazy" /></div>
-          <h4>AI Engineer</h4>
-          <p class="team-role">Applied AI &amp; ML</p>
-          <p class="team-bio">Specialist in RAG pipelines, LLM integration, and responsible AI deployment patterns.</p>
-          <a href="#" class="team-social" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="services-grid">
+          <div class="service-card reveal" data-index="0">
+            <div class="service-number">01</div>
+            <h3>Cloud Adoption & Landing Zones</h3>
+            <p>Secure, well-architected cloud foundations that accelerate your migration journey.</p>
+          </div>
+          <div class="service-card reveal" data-index="1">
+            <div class="service-number">02</div>
+            <h3>Operating Model & Governance</h3>
+            <p>Organisational design that balances delivery speed with control and compliance.</p>
+          </div>
+          <div class="service-card reveal" data-index="2">
+            <div class="service-number">03</div>
+            <h3>Reliability, Monitoring & FinOps</h3>
+            <p>Uptime, visibility, and cost efficiency across your entire cloud estate.</p>
+          </div>
+          <div class="service-card reveal" data-index="3">
+            <div class="service-number">04</div>
+            <h3>DevSecOps Enablement</h3>
+            <p>Security embedded into every stage of the software delivery lifecycle.</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FAQ -->
-  <section class="section faq-section snap-section">
-    <div class="container">
-      <p class="section-label reveal" style="text-align:center">Common questions</p>
-      <h2 class="section-title reveal" style="text-align:center">Frequently Asked <span class="highlight-text">Questions</span></h2>
-      <div class="faq-list">
-        <div class="faq-item glass-card reveal" data-index="0">
-          <button class="faq-question" aria-expanded="false"><span>What industries do you work with?</span><svg viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <div class="faq-answer"><p>We work across financial services, healthcare, retail, public sector, and technology. Our frameworks are industry-agnostic but our consultants bring deep domain expertise in regulated environments.</p></div>
-        </div>
-        <div class="faq-item glass-card reveal" data-index="1">
-          <button class="faq-question" aria-expanded="false"><span>How long does a typical security assessment take?</span><svg viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <div class="faq-answer"><p>A standard assessment takes 2-4 weeks depending on scope. This includes discovery, control review, cloud posture checks, and a prioritised remediation roadmap with quick wins for the first 30 days.</p></div>
-        </div>
-        <div class="faq-item glass-card reveal" data-index="2">
-          <button class="faq-question" aria-expanded="false"><span>Do you offer ongoing support after delivery?</span><svg viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <div class="faq-answer"><p>Yes. Our &ldquo;Run&rdquo; phase includes monitoring, incident response playbooks, and continuous improvement cycles. We offer retained support models tailored to your operational needs.</p></div>
-        </div>
-        <div class="faq-item glass-card reveal" data-index="3">
-          <button class="faq-question" aria-expanded="false"><span>What is your approach to AI and data governance?</span><svg viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <div class="faq-answer"><p>We follow a responsible AI framework: data lineage, bias testing, explainability, and compliance with UK AI regulations. Governance is embedded from design, not added as an afterthought.</p></div>
-        </div>
-        <div class="faq-item glass-card reveal" data-index="4">
-          <button class="faq-question" aria-expanded="false"><span>Can you integrate with our existing tools and platforms?</span><svg viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <div class="faq-answer"><p>Absolutely. We specialise in connecting disparate systems through API-first and event-driven integration patterns. We work with all major cloud providers, iPaaS platforms, and enterprise middleware.</p></div>
-        </div>
-        <div class="faq-item glass-card reveal" data-index="5">
-          <button class="faq-question" aria-expanded="false"><span>How do you price your engagements?</span><svg viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <div class="faq-answer"><p>We offer fixed-price assessments, time-and-materials delivery, and retained advisory models. After an initial discovery call, we provide a transparent proposal with clear deliverables and timelines.</p></div>
+    <!-- ====== ABOUT ====== -->
+    <section id="about" class="section section--elevated">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-text">
+            <div class="section-header reveal">
+              <p class="section-label">Who we are</p>
+              <h2 class="section-title">About PAN Solutions</h2>
+            </div>
+            <p class="about-description reveal" data-index="1">We're a specialist IT services partner helping teams deliver secure, scalable and compliant technology. Our work spans cyber security assessments, data platforms, enterprise integration, and applied AI.</p>
+            <div class="value-cards reveal" data-index="2">
+              <div class="value-card">
+                <svg class="value-card-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M24 4L40 12V22C40 33 33 40 24 44C15 40 8 33 8 22V12L24 4Z"/>
+                </svg>
+                <h3>Security-first</h3>
+                <p>Controls, privacy, and compliance built in — not bolted on.</p>
+              </div>
+              <div class="value-card">
+                <svg class="value-card-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="24" cy="24" r="18"/>
+                  <polyline points="16 24 22 30 34 18"/>
+                </svg>
+                <h3>Outcome-led</h3>
+                <p>Clear success metrics and practical delivery cadence.</p>
+              </div>
+            </div>
+          </div>
+          <div class="about-image reveal" data-index="1">
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=75" alt="PAN Solutions team collaborating on a project" width="800" height="600" loading="lazy" />
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- BLOG / INSIGHTS -->
-  <section class="section blog-section snap-section">
-    <div class="container">
-      <p class="section-label reveal">Latest thinking</p>
-      <h2 class="section-title reveal"><span class="highlight-text">Insights</span> &amp; Articles</h2>
-      <div class="blog-grid">
-        <div class="blog-card glass-card reveal tilt-card" data-index="0">
-          <div class="blog-card-image"><img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=75" alt="Cyber Security Trends" loading="lazy" /><span class="blog-tag">Cyber Security</span></div>
-          <div class="blog-card-content"><time>Jan 2026</time><h4>Top 5 Cyber Security Trends for 2026</h4><p>From AI-driven threat detection to zero-trust maturity, the key areas every CISO should prioritise this year.</p><a href="#" class="blog-link">Read more &rarr;</a></div>
+    <!-- ====== APPROACH ====== -->
+    <section id="approach" class="section">
+      <div class="container">
+        <div class="section-header section-header--center reveal">
+          <p class="section-label">How we deliver</p>
+          <h2 class="section-title">Our Approach</h2>
+          <p class="section-subtitle">A proven four-step methodology that turns complexity into clarity.</p>
         </div>
-        <div class="blog-card glass-card reveal tilt-card" data-index="1">
-          <div class="blog-card-image"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=75" alt="Data Lakehouse" loading="lazy" /><span class="blog-tag">Data</span></div>
-          <div class="blog-card-content"><time>Dec 2025</time><h4>Building a Governed Data Lakehouse</h4><p>A practical guide to combining the flexibility of data lakes with the governance of data warehouses.</p><a href="#" class="blog-link">Read more &rarr;</a></div>
-        </div>
-        <div class="blog-card glass-card reveal tilt-card" data-index="2">
-          <div class="blog-card-image"><img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=600&q=75" alt="RAG AI" loading="lazy" /><span class="blog-tag">AI</span></div>
-          <div class="blog-card-content"><time>Nov 2025</time><h4>RAG Patterns for Enterprise AI</h4><p>How retrieval-augmented generation is transforming knowledge management and internal copilot experiences.</p><a href="#" class="blog-link">Read more &rarr;</a></div>
+        <div class="timeline reveal" data-index="1">
+          <div class="timeline-step">
+            <div class="timeline-number">01</div>
+            <h3>Discover</h3>
+            <p>Understand objectives, current state, risks, and constraints.</p>
+          </div>
+          <div class="timeline-step">
+            <div class="timeline-number">02</div>
+            <h3>Design</h3>
+            <p>Architecture, controls, operating model, and delivery blueprint.</p>
+          </div>
+          <div class="timeline-step">
+            <div class="timeline-number">03</div>
+            <h3>Build</h3>
+            <p>Implement with DevSecOps, testing, and measurable outcomes.</p>
+          </div>
+          <div class="timeline-step">
+            <div class="timeline-number">04</div>
+            <h3>Run</h3>
+            <p>Operationalise with monitoring, incident response, and continuous improvement.</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CONTACT -->
-  <section class="section contact snap-section" id="contact">
-    <div class="container">
-      <p class="section-label reveal">Get in touch</p>
-      <h2 class="section-title reveal">Let's <span class="highlight-text">Talk</span></h2>
-      <p class="section-subtitle reveal">Tell us what you're trying to achieve &mdash; we'll respond with a short plan and next steps.</p>
-      <div class="contact-grid">
-        <div class="contact-info reveal">
-          <div class="contact-info-item"><div class="contact-info-icon glass-card"><svg viewBox="0 0 24 24" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2" fill="none"/><path d="M22 6l-10 7L2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><h4>Email</h4><a href="mailto:sales@pansolutions.co.uk">sales@pansolutions.co.uk</a></div></div>
-          <div class="contact-info-item"><div class="contact-info-icon glass-card"><svg viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke="currentColor" stroke-width="2" fill="none"/></svg></div><div><h4>Phone</h4><a href="tel:+447536783312">+44 (0)7536 783312</a></div></div>
-          <div class="contact-info-item"><div class="contact-info-icon glass-card"><svg viewBox="0 0 24 24" fill="none"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1118 0z" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" fill="none"/></svg></div><div><h4>Location</h4><p>UK &bull; Remote delivery</p></div></div>
+    <!-- ====== STATS ====== -->
+    <section class="section section--elevated" id="stats">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-card reveal" data-index="0">
+            <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L20 7V13C20 18.5 16.8 22 12 24C7.2 22 4 18.5 4 13V7L12 2Z"/></svg>
+            <div>
+              <span class="stat-number" data-target="50">0</span><span class="stat-suffix">+</span>
+            </div>
+            <p class="stat-label">Security Assessments</p>
+          </div>
+          <div class="stat-card reveal" data-index="1">
+            <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="4"/><circle cx="16" cy="16" r="4"/><line x1="11" y1="5" x2="19" y2="13"/><line x1="5" y1="11" x2="13" y2="19"/></svg>
+            <div>
+              <span class="stat-number" data-target="100">0</span><span class="stat-suffix">+</span>
+            </div>
+            <p class="stat-label">Integrations Delivered</p>
+          </div>
+          <div class="stat-card reveal" data-index="2">
+            <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8 2 4 6 6 11C2 13 4 18 8 18H10"/><path d="M12 2C16 2 20 6 18 11C22 13 20 18 16 18H14"/><line x1="12" y1="6" x2="12" y2="20"/></svg>
+            <div>
+              <span class="stat-number" data-target="30">0</span><span class="stat-suffix">+</span>
+            </div>
+            <p class="stat-label">AI Use Cases</p>
+          </div>
+          <div class="stat-card reveal" data-index="3">
+            <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <div>
+              <span class="stat-number" data-target="10">0</span><span class="stat-suffix">+</span>
+            </div>
+            <p class="stat-label">Years Experience</p>
+          </div>
         </div>
-        <form class="contact-form glass-card reveal" id="contactForm">
-          <div class="form-row"><div class="form-group"><label for="firstName">First name</label><input type="text" id="firstName" name="firstName" required /></div><div class="form-group"><label for="lastName">Last name</label><input type="text" id="lastName" name="lastName" required /></div></div>
-          <div class="form-group"><label for="email">Work email</label><input type="email" id="email" name="email" required /></div>
-          <div class="form-group"><label for="message">How can we help?</label><textarea id="message" name="message" rows="4" required></textarea></div>
-          <button type="submit" class="btn btn-primary btn-full magnetic-btn">Send Message</button>
-          <p class="form-note">This is a static form. Wire it to your backend or Formspree / Netlify Forms for production.</p>
-        </form>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- NEWSLETTER -->
-  <section class="newsletter-section snap-section">
-    <div class="container">
-      <div class="newsletter-inner reveal">
-        <div class="newsletter-text"><h3>Stay Updated</h3><p>Get insights on cyber security, data engineering, and AI delivered to your inbox.</p></div>
-        <form class="newsletter-form" id="newsletterForm">
-          <input type="email" placeholder="Enter your email" required aria-label="Email for newsletter" />
-          <button type="submit" class="btn btn-primary magnetic-btn">Subscribe</button>
-        </form>
+    <!-- ====== CLIENT LOGOS ====== -->
+    <div class="logos-section">
+      <p class="logos-label">Trusted by</p>
+      <div class="logos-track-wrapper">
+        <div class="logos-track">
+          <span class="logo-pill">Microsoft Azure</span>
+          <span class="logo-pill">AWS</span>
+          <span class="logo-pill">Google Cloud</span>
+          <span class="logo-pill">Deloitte</span>
+          <span class="logo-pill">Accenture</span>
+          <span class="logo-pill">HSBC</span>
+          <span class="logo-pill">Barclays</span>
+          <span class="logo-pill">NHS Digital</span>
+          <!-- Duplicate for seamless loop -->
+          <span class="logo-pill">Microsoft Azure</span>
+          <span class="logo-pill">AWS</span>
+          <span class="logo-pill">Google Cloud</span>
+          <span class="logo-pill">Deloitte</span>
+          <span class="logo-pill">Accenture</span>
+          <span class="logo-pill">HSBC</span>
+          <span class="logo-pill">Barclays</span>
+          <span class="logo-pill">NHS Digital</span>
+        </div>
       </div>
     </div>
-  </section>
+
+    <!-- ====== OUTCOMES ====== -->
+    <section class="section" id="work">
+      <div class="container">
+        <div class="section-header section-header--center reveal">
+          <p class="section-label">What we deliver</p>
+          <h2 class="section-title">Example Outcomes</h2>
+          <p class="section-subtitle">Real deliverables from recent engagements across our four practice areas.</p>
+        </div>
+        <div class="outcomes-grid">
+          <div class="outcome-card reveal" data-index="0">
+            <div class="outcome-image">
+              <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=75" alt="Cyber security assessment dashboard" width="600" height="400" loading="lazy" />
+            </div>
+            <div class="outcome-accent"></div>
+            <div class="outcome-content">
+              <h3>Cyber Security Assessment</h3>
+              <p>Control review, identity & access evaluation, cloud posture checks, and a prioritised remediation plan.</p>
+              <ul class="outcome-list">
+                <li>Risk register + heatmap</li>
+                <li>Quick wins (0–30 days)</li>
+                <li>Strategic roadmap (30–180 days)</li>
+              </ul>
+            </div>
+          </div>
+          <div class="outcome-card reveal" data-index="1">
+            <div class="outcome-image">
+              <img src="https://images.unsplash.com/photo-1558346547-4439467bd1d5?auto=format&fit=crop&w=600&q=75" alt="Integration platform architecture" width="600" height="400" loading="lazy" />
+            </div>
+            <div class="outcome-accent"></div>
+            <div class="outcome-content">
+              <h3>Integration Platform</h3>
+              <p>API-first integration with governance, versioning, and reusable enterprise patterns.</p>
+              <ul class="outcome-list">
+                <li>API standards & lifecycle</li>
+                <li>Observability & SLAs</li>
+                <li>Secure connectivity</li>
+              </ul>
+            </div>
+          </div>
+          <div class="outcome-card reveal" data-index="2">
+            <div class="outcome-image">
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=75" alt="Data analytics and AI dashboard" width="600" height="400" loading="lazy" />
+            </div>
+            <div class="outcome-accent"></div>
+            <div class="outcome-content">
+              <h3>Data + AI Acceleration</h3>
+              <p>Governed data products powering analytics and GenAI copilots with measurable ROI.</p>
+              <ul class="outcome-list">
+                <li>Data governance & lineage</li>
+                <li>Secure AI patterns</li>
+                <li>Use-case rollout playbook</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== TESTIMONIALS ====== -->
+    <section class="section section--elevated">
+      <div class="container">
+        <div class="section-header section-header--center reveal">
+          <p class="section-label">What clients say</p>
+          <h2 class="section-title">Client Testimonials</h2>
+        </div>
+        <div class="testimonials-wrapper reveal" data-index="1">
+          <!-- Decorative quote mark -->
+          <svg class="testimonial-quote-mark" viewBox="0 0 120 80" fill="currentColor">
+            <path d="M0 80V46.4C0 30.9 3.7 19.5 11.2 12.2 18.7 4.1 29.3 0 43.2 0l4.8 16c-9.6 0-16.8 2.7-21.6 8-4.8 5.4-7.2 12.8-7.2 22.4H48V80H0zm72 0V46.4c0-15.5 3.7-26.9 11.2-34.2C90.7 4.1 101.3 0 115.2 0L120 16c-9.6 0-16.8 2.7-21.6 8-4.8 5.4-7.2 12.8-7.2 22.4H120V80H72z"/>
+          </svg>
+
+          <div class="testimonial-slides">
+            <div class="testimonial-slide active">
+              <blockquote>"PAN Solutions transformed our security posture in under eight weeks. Their assessment uncovered critical gaps we'd missed for years, and the remediation roadmap was immediately actionable."</blockquote>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar">JR</div>
+                <div class="testimonial-meta">
+                  <div class="testimonial-name">James Richardson</div>
+                  <div class="testimonial-title">CTO, FinTech Startup</div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-slide">
+              <blockquote>"The integration platform they designed cut our middleware costs by 40% and gave us real-time observability for the first time. Exceptional delivery."</blockquote>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar">SP</div>
+                <div class="testimonial-meta">
+                  <div class="testimonial-name">Sarah Patel</div>
+                  <div class="testimonial-title">VP Engineering, Retail Group</div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-slide">
+              <blockquote>"Their governed data lakehouse approach gave us a single source of truth across five business units. The ROI was evident within the first quarter."</blockquote>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar">MK</div>
+                <div class="testimonial-meta">
+                  <div class="testimonial-name">Michael Kowalski</div>
+                  <div class="testimonial-title">Head of Data, Insurance Co</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-controls">
+            <button class="testimonial-btn" id="testimonialPrev" aria-label="Previous testimonial">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <div class="testimonial-dots">
+              <button class="testimonial-dot active" aria-label="Testimonial 1"></button>
+              <button class="testimonial-dot" aria-label="Testimonial 2"></button>
+              <button class="testimonial-dot" aria-label="Testimonial 3"></button>
+            </div>
+            <button class="testimonial-btn" id="testimonialNext" aria-label="Next testimonial">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== TEAM ====== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header section-header--center reveal">
+          <p class="section-label">Leadership</p>
+          <h2 class="section-title">Our Team</h2>
+          <p class="section-subtitle">Experienced practitioners who've delivered across FTSE 100 and high-growth environments.</p>
+        </div>
+        <div class="team-grid">
+          <div class="team-card reveal" data-index="0">
+            <div class="team-avatar"><span>SC</span></div>
+            <h4>Principal Consultant</h4>
+            <p class="team-role">Cyber Security & Strategy</p>
+            <p class="team-bio">15+ years leading risk, compliance, and security transformation programmes.</p>
+            <a href="#" class="team-social" aria-label="LinkedIn profile">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+          </div>
+          <div class="team-card reveal" data-index="1">
+            <div class="team-avatar"><span>DL</span></div>
+            <h4>Data Lead</h4>
+            <p class="team-role">Platforms & Engineering</p>
+            <p class="team-bio">Specialist in lakehouse architecture, data governance, and analytics delivery.</p>
+            <a href="#" class="team-social" aria-label="LinkedIn profile">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+          </div>
+          <div class="team-card reveal" data-index="2">
+            <div class="team-avatar"><span>IA</span></div>
+            <h4>Integration Architect</h4>
+            <p class="team-role">APIs & Eventing</p>
+            <p class="team-bio">FTSE 100 enterprise integration experience across financial services and retail.</p>
+            <a href="#" class="team-social" aria-label="LinkedIn profile">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+          </div>
+          <div class="team-card reveal" data-index="3">
+            <div class="team-avatar"><span>AE</span></div>
+            <h4>AI Engineer</h4>
+            <p class="team-role">Applied AI & ML</p>
+            <p class="team-bio">RAG pipelines, LLM fine-tuning, and responsible AI frameworks for production.</p>
+            <a href="#" class="team-social" aria-label="LinkedIn profile">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== FAQ ====== -->
+    <section class="section section--elevated">
+      <div class="container">
+        <div class="section-header section-header--center reveal">
+          <p class="section-label">Common questions</p>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item reveal" data-index="0">
+            <button class="faq-question" aria-expanded="false">
+              What industries do you work with?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Financial services, insurance, retail, healthcare, and public sector. Our frameworks adapt to any regulated environment.</p>
+            </div>
+          </div>
+          <div class="faq-item reveal" data-index="1">
+            <button class="faq-question" aria-expanded="false">
+              How long does a typical security assessment take?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>2–4 weeks depending on scope. We start with a scoping call to define objectives and boundaries.</p>
+            </div>
+          </div>
+          <div class="faq-item reveal" data-index="2">
+            <button class="faq-question" aria-expanded="false">
+              Do you offer ongoing support after delivery?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Yes — retained advisory, operational support, and continuous improvement engagements.</p>
+            </div>
+          </div>
+          <div class="faq-item reveal" data-index="3">
+            <button class="faq-question" aria-expanded="false">
+              What is your approach to AI and data governance?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Responsible AI framework covering bias testing, explainability, data lineage, and UK/EU regulatory compliance.</p>
+            </div>
+          </div>
+          <div class="faq-item reveal" data-index="4">
+            <button class="faq-question" aria-expanded="false">
+              Can you integrate with our existing tools and platforms?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Absolutely. API-first approach — we work with your existing technology estate, not against it.</p>
+            </div>
+          </div>
+          <div class="faq-item reveal" data-index="5">
+            <button class="faq-question" aria-expanded="false">
+              How do you price your engagements?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Fixed-price, time & materials, or retained advisory. We scope and quote after an initial discovery call.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== CONTACT ====== -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="section-label">Get in touch</p>
+          <h2 class="section-title">Let's Talk</h2>
+          <p class="section-subtitle">Ready to modernise your technology estate? Tell us about your challenge.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-info reveal" data-index="1">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22 4 12 13 2 4"/></svg>
+              </div>
+              <div>
+                <p class="contact-item-label">Email</p>
+                <p class="contact-item-value"><a href="mailto:sales@pansolutions.co.uk">sales@pansolutions.co.uk</a></p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              </div>
+              <div>
+                <p class="contact-item-label">Phone</p>
+                <p class="contact-item-value"><a href="tel:+447536783312">+44 (0)7536 783312</a></p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <p class="contact-item-label">Location</p>
+                <p class="contact-item-value">UK · Remote delivery</p>
+              </div>
+            </div>
+          </div>
+          <form class="contact-form reveal" data-index="2" id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName" required placeholder="John" />
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="lastName" required placeholder="Smith" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Work Email</label>
+              <input type="email" id="email" name="email" required placeholder="john@company.com" />
+            </div>
+            <div class="form-group">
+              <label for="message">How can we help?</label>
+              <textarea id="message" name="message" required placeholder="Tell us about your project or challenge..."></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full">Send Message
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </button>
+            <p class="form-note">We typically respond within one business day.</p>
+          </form>
+        </div>
+      </div>
+    </section>
 
   </main>
 
-  <!-- FLOATING BACK TO TOP -->
-  <button class="floating-top" id="floatingTop" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none"><path d="M18 15l-6-6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-
-  <!-- COOKIE BANNER -->
-  <div class="cookie-banner glass-card" id="cookieBanner" role="alert">
-    <p>We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.</p>
-    <div class="cookie-actions">
-      <button class="btn btn-primary btn-sm" id="cookieAccept">Accept</button>
-      <button class="btn btn-outline btn-sm" id="cookieDecline">Decline</button>
-    </div>
-  </div>
-
-  <!-- CHAT WIDGET -->
-  <div class="chat-widget" id="chatWidget">
-    <button class="chat-toggle" id="chatToggle" aria-label="Open chat">
-      <svg class="chat-icon-open" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2v10z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <svg class="chat-icon-close" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </button>
-    <div class="chat-panel glass-card" id="chatPanel">
-      <div class="chat-header"><h4>Chat with us</h4></div>
-      <div class="chat-messages" id="chatMessages">
-        <div class="chat-msg bot"><p>Hi! How can we help you today? Ask us about our cyber security, data, integration, or AI services.</p></div>
-      </div>
-      <form class="chat-input" id="chatForm">
-        <input type="text" id="chatInput" placeholder="Type a message..." aria-label="Chat message" />
-        <button type="submit" aria-label="Send"><svg viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-      </form>
-    </div>
-  </div>
-
-  <!-- FOOTER -->
+  <!-- ====== FOOTER ====== -->
   <footer class="footer" role="contentinfo">
-    <div class="container footer-content">
-      <div class="footer-left"><a href="#" class="nav-logo"><img src="https://www.pansolutions.co.uk/images/pansolutions.svg" alt="PAN Solutions" class="footer-logo-img" /></a><p class="footer-tagline">Cyber Security &bull; Data &bull; Integration &bull; AI</p></div>
-      <div class="footer-links"><a href="#services">Services</a><a href="#approach">Approach</a><a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a></div>
-      <div class="footer-bottom"><p>&copy; <span id="currentYear"></span> PAN Solutions. All rights reserved.</p></div>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="https://www.pansolutions.co.uk/images/pansolutions.svg" alt="PAN Solutions" width="100" height="32" />
+          <span class="footer-tagline">Cyber Security · Data · Integration · AI</span>
+        </div>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="#services">Services</a>
+          <a href="#approach">Approach</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+      <div class="footer-newsletter">
+        <div class="footer-newsletter-text">
+          <h3>Stay Updated</h3>
+          <p>Get insights on cyber security, data engineering, and AI delivered to your inbox.</p>
+        </div>
+        <form class="footer-newsletter-form" id="newsletterForm">
+          <input type="email" placeholder="Enter your email" required aria-label="Email for newsletter" />
+          <button type="submit" class="btn btn--primary btn--sm">Subscribe</button>
+        </form>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copyright">&copy; <span id="currentYear"></span> PAN Solutions. All rights reserved.</p>
+      </div>
     </div>
   </footer>
 
-  <script src="js/script.js"></script>
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <!-- Cookie Banner -->
+  <div class="cookie-banner" id="cookieBanner">
+    <p class="cookie-text">We use cookies to improve your experience. By continuing, you agree to our use of cookies.</p>
+    <div class="cookie-actions">
+      <button class="cookie-btn cookie-btn--accept" id="cookieAccept">Accept</button>
+      <button class="cookie-btn cookie-btn--decline" id="cookieDecline">Decline</button>
+    </div>
+  </div>
+
+  <script src="js/script.js" defer></script>
 </body>
 </html>
